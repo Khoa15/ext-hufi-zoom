@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Tạo link zoom cho hệ thống HUFI",
+  "description": "tạo link zoom trên máy tính cho sinh viên không vào được trên hệ thống",
+  "version": "1.0",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action":{},
+  "content_scripts": [
+    {
+      "js": [
+        "scripts/content.js"
+      ],
+      "matches": [
+        "https://sinhvien.hufi.edu.vn/*"
+      ]
+    }
+  ],
+  "host_permissions":[
+    "https://sinhvien.hufi.edu.vn/*"
+  ],
+  "permissions": [
+    "tabs",
+    "webNavigation",
+    "activeTab"
+  ]
+}
